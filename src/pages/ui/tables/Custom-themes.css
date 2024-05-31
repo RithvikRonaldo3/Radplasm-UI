@@ -1,0 +1,14 @@
+
+  .gridjs-search {
+    float: right; 
+    margin-right: 5%;
+    background-color: rgb(254, 255, 255);
+    margin-top: -10px;
+    border-color: black;
+    z-index: 5;
+    
+}
+    .gridjs-search-input {
+      width: 250px; }
+  
+ 

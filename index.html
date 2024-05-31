@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="shortcut icon" href="./src/assets/images/favicon.ico" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="">
+  <meta name="author" content="ThriveHealth">
+  <title>Thrive Health - Radplasm</title>
+  <script src="https://unpkg.com/gridjs/plugins/selection/dist/selection.umd.js"></script>
+  <style>
+    #splash-screen {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      background: white;
+      display: flex;
+      height: 100%;
+      width: 100%;
+      transform: translate(-50%, -50%);
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+      opacity: 1;
+      transition: all 15s linear;
+      overflow: hidden;
+    }
+
+    #splash-screen.remove {
+      animation: fadeout 1.5s forwards;
+      z-index: 0;
+    }
+
+    @keyframes fadeout {
+      to {
+        opacity: 0;
+        visibility: hidden;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div id="root"></div>
+  <div id="splash-screen">
+    <img alt="Logo"  src="./src/assets/images/logo-12.png" style="height: 80%;" />
+  </div>
+  <script type="module" src="/src/index.tsx"></script>
+  <script>
+    document.querySelector('#root')?.addEventListener('DOMNodeInserted', () => {
+      document.querySelector('#splash-screen')?.classList.add('remove');
+    })
+  </script>
+  <script src="https://unpkg.com/gridjs/plugins/selection/dist/selection.umd.js"></script>
+</body>
+
+</html>
